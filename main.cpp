@@ -8,12 +8,15 @@ int main(){
     
     string word;
     string guess;
+    int toLose;
     
 
     //Menu and player enters word to guess
     cout << "HANGMAN" <<endl<<endl;
     cout << "Enter a word: ";
     cin >> word; 
+    cout << "Enter # of guesses: ";
+    cin >>toLose;
     
     //to determine word size for for loops and arrays
     int Wsize = word.size();
@@ -41,9 +44,9 @@ while(toWin != 0){
 
 
 
-//in case player wants to guess whole word
-if (guess.size() == Wsize){
-    if (guess == word){
+    //in case player wants to guess whole word
+    if (guess.size() == Wsize){
+        if (guess == word){
         
         for (int i = 0; i < Wsize; i++){
         empty[i] = word[i];
@@ -54,29 +57,30 @@ if (guess.size() == Wsize){
 
     }else{
         cout << "Wrong" <<endl;
+        toLose--;
+        cout <<"# Guesses to lose: "<< toLose <<endl;
     }
     
 
-//in case player wants to guess one letter
-}else{
-    for (int i = 0; i < Wsize; i++){
-        if (word[i] == guess[0]){
-            toWin = toWin - 1;
-            empty[i] = guess[0];
+    //in case player wants to guess one letter
+    }else{
+        for (int i = 0; i < Wsize; i++){
+            if (word[i] == guess[0]){
+                toWin = toWin - 1;
+                empty[i] = guess[0];
+            }
         }
-    }
-    for(int j = 0; j < Wsize; j++){
-        cout <<empty[j] << " ";
-    }cout << endl;
+        for(int j = 0; j < Wsize; j++){
+            cout <<empty[j] << " ";
+            }cout << endl;
     
-}
+    }//END ELSE
+
+
+}//END WHILE
 
 
 
-}
 
-
-
-
-    return 0; 
+return 0; 
 }
