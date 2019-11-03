@@ -30,7 +30,6 @@ int main(){
         empty[i] = '_';
         cout << empty[i] << " ";
     }
-    
     cout << endl;
 
     
