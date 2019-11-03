@@ -30,6 +30,7 @@ int main(){
         empty[i] = '_';
         cout << empty[i] << " ";
     }
+    
     cout << endl;
 
     
@@ -38,7 +39,7 @@ int main(){
 while(toWin != 0){
 
 
-    //ASK FOR WORD IN GUESS STRING STILL PENDING
+    
     cout << "Enter a guess: ";
     cin >> guess;
 
