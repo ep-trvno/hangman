@@ -9,6 +9,7 @@ int main(){
     string word;
     string guess;
     int toLose;
+    bool RW;
     
 
     //Menu and player enters word to guess
@@ -68,6 +69,9 @@ while(toWin != 0){
             if (word[i] == guess[0]){
                 toWin = toWin - 1;
                 empty[i] = guess[0];
+                RW = true;
+                break;
+                //CHECK TO SEE IF THE "BREAK" WORKED
             }
         }
         for(int j = 0; j < Wsize; j++){
